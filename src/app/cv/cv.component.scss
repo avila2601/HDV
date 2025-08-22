@@ -1,0 +1,336 @@
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #181818;
+  color: #fff;
+  padding: 32px 40px 24px 40px;
+}
+
+.cv-header-info h1 {
+  font-size: 2.5rem;
+  margin: 0 0 16px 0;
+  font-weight: bold;
+}
+
+.cv-header-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 420px;
+  font-size: 1rem;
+}
+.cv-header-list li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+.cv-header-list li:nth-child(odd) {
+  padding-right: 12px;
+}
+.cv-header-list li:nth-child(3),
+.cv-header-list li:nth-child(4) {
+  margin-top: 4px;
+}
+
+.cv-header-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cv-header-list .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.cv-main {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 32px 40px;
+}
+
+.cv-main-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.cv-main-right {
+  flex: 1;
+  min-width: 220px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cv-profile h2, .cv-education h2, .cv-experience h2, .cv-skills h2, .cv-hobbies h2 {
+  color: #2a4cff;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.cv-profile p {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.cv-education-item, .cv-experience-item {
+  margin-bottom: 18px;
+}
+
+.cv-education-item span, .cv-experience-item span {
+  font-size: 0.95rem;
+  color: #888;
+  display: block;
+}
+
+.cv-education-item strong, .cv-experience-item strong {
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cv-experience-item p {
+  margin: 0 0 0 0;
+  font-size: 0.98rem;
+}
+
+.cv-skills-group h3 {
+  font-size: 1rem;
+  margin: 12px 0 6px 0;
+  color: #222;
+}
+
+.cv-skills-group {
+  margin-bottom: 18px;
+}
+
+.cv-skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cv-skill-bar span {
+  flex: 1 0 90px;
+  font-size: 0.98rem;
+}
+
+.cv-skill-bar .bar {
+  flex: 2 1 120px;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cv-skill-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2a4cff 60%, #4f8cff 100%);
+  border-radius: 6px 0 0 6px;
+}
+
+.cv-hobbies ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-hobbies li {
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-hobbies .icon {
+  font-size: 1.3em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-projects {
+  margin-top: 24px;
+}
+.cv-projects h2 {
+  color: #2a4cff;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.cv-projects ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cv-projects li {
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+.cv-projects li > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cv-projects .icon {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+.cv-projects a {
+  color: #2a4cff;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+.cv-projects a:hover {
+  background: #e6eaff;
+  color: #1a2a99;
+  text-decoration: none;
+}
+.cv-projects .external-link {
+  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+  color: #888;
+  font-size: 1em;
+}
+.cv-projects a:hover .external-link {
+  color: #2a4cff;
+}
+
+.cv-projects .project-desc {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 2px 0 0 28px;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .cv-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .cv-main {
+    flex-direction: column;
+    gap: 0;
+    padding: 24px 12px;
+  }
+  .cv-main-right {
+    margin-left: 0;
+    margin-top: 24px;
+  }
+  .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 12px 16px 12px;
+  }
+  .cv-header-photo {
+    margin-top: 18px;
+  }
+}
+
+@media print {
+  body, html {
+    background: #fff !important;
+    color: #222 !important;
+  }
+  .cv-container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cv-header {
+    padding: 24px 24px 16px 24px !important;
+    background: #181818 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .cv-main {
+    flex-direction: row !important;
+    gap: 24px !important;
+    padding: 24px !important;
+  }
+  .cv-main-left, .cv-main-right {
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+  .cv-header-photo {
+    border: 2px solid #fff !important;
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .cv-header-list {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+  }
+  .cv-header-list li {
+    width: 50% !important;
+    padding: 0 !important;
+    margin: 0 0 4px 0 !important;
+  }
+  .cv-projects, .cv-hobbies, .cv-skills {
+    page-break-inside: avoid !important;
+  }
+  .cv-projects a {
+    color: #181818 !important;
+    text-decoration: none !important;
+  }
+}
