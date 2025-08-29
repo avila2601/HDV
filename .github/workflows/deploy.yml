@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npx ng build --base-href /HDV/
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
