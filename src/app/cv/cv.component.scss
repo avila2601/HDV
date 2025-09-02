@@ -79,7 +79,7 @@
 .cv-main {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 24px;
   padding: 32px 40px;
 }
 
@@ -94,7 +94,7 @@
   margin-left: 24px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 10px;
 }
 
 .cv-profile h2, .cv-education h2, .cv-experience h2, .cv-skills h2, .cv-hobbies h2 {
@@ -174,7 +174,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 }
 
 .cv-hobbies li {
@@ -192,7 +192,7 @@
 }
 
 .cv-projects {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 .cv-projects h2 {
   color: #2a4cff;
@@ -259,7 +259,7 @@
 }
 
 .smaller-font {
-  font-size: 0.85rem !important;
+  font-size: 0.9rem !important;
   color: #222 !important;
 }
 
