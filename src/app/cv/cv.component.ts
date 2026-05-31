@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-cv',
   standalone: true,
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.scss'
+  styleUrls: ['./cv.component.scss']
 })
 export class CvComponent {}
