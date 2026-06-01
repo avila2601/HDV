@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Diego Fernando Avila Gómez</title>
+    <style>
+      @page {
+        margin: 28px 12px 28px 12px;
+      }
+      @page :first {
+        margin-top: 12px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+      .cv-container {
+        max-width: 100%;
+        margin: 0;
+        background: #fff;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #222;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: hidden;
+      }
+      .cv-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #181818;
+        color: #fff;
+        padding: 32px 40px 24px 40px;
+      }
+      .cv-header-info h1 {
+        font-size: 2rem;
+        margin: 0 0 12px 0;
+        font-weight: bold;
+      }
+      .cv-header-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 420px;
+        font-size: 0.95rem;
+      }
+      .cv-header-list li {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        width: 50%;
+        box-sizing: border-box;
+        margin-bottom: 4px;
+      }
+      .cv-header-list li:nth-child(odd) {
+        padding-right: 12px;
+      }
+      .cv-header-list li:nth-child(3),
+      .cv-header-list li:nth-child(4) {
+        margin-top: 4px;
+      }
+      .cv-header-photo {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cv-header-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cv-header-list .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+      .cv-main {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        padding: 28px 28px 32px 28px;
+      }
+      .cv-main-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .cv-main-right {
+        flex: 1;
+        min-width: 220px;
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .cv-profile h2,
+      .cv-education h2,
+      .cv-experience h2,
+      .cv-skills h2,
+      .cv-hobbies h2 {
+        color: #2a4cff;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        margin-top: 0;
+      }
+      .cv-profile p {
+        margin-top: 0;
+        font-size: 1rem;
+        color: #222;
+      }
+      .cv-education-item,
+      .cv-experience-item {
+        margin-bottom: 18px;
+      }
+      .cv-education-item span,
+      .cv-experience-item span {
+        font-size: 0.95rem;
+        color: #888;
+        display: block;
+      }
+      .cv-education-item strong,
+      .cv-experience-item strong {
+        font-size: 1.05rem;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .cv-experience-item p {
+        margin: 0;
+        font-size: 0.98rem;
+      }
+      .cv-skills-group h3 {
+        font-size: 1rem;
+        margin: 12px 0 6px 0;
+        color: #222;
+      }
+      .cv-skills-group {
+        margin-bottom: 18px;
+      }
+      .cv-skill-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .cv-skill-bar span {
+        flex: 1 0 90px;
+        font-size: 0.98rem;
+      }
+      .cv-skill-bar .bar {
+        flex: 2 1 120px;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+      }
+      .cv-skill-bar .fill {
+        height: 100%;
+        background: linear-gradient(90deg, #2a4cff 60%, #4f8cff 100%);
+        border-radius: 6px 0 0 6px;
+      }
+      .cv-hobbies ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .cv-hobbies li {
+        font-size: 0.98rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .cv-hobbies .icon {
+        font-size: 1.3em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cv-projects {
+        margin-top: 12px;
+      }
+      .cv-projects h2 {
+        color: #2a4cff;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+      .cv-projects ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .cv-projects li {
+        font-size: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        flex-direction: column;
+        margin-bottom: 4px;
+      }
+      .cv-projects li > a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .cv-projects .icon {
+        font-size: 1.2em;
+        vertical-align: middle;
+      }
+      .cv-projects a {
+        color: #2a4cff;
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        border-radius: 4px;
+        padding: 2px 4px;
+      }
+      .cv-projects a:hover {
+        background: #e6eaff;
+        color: #1a2a99;
+        text-decoration: none;
+      }
+      .cv-projects .external-link {
+        margin-left: 4px;
+        display: inline-flex;
+        align-items: center;
+        color: #888;
+        font-size: 1em;
+      }
+      .cv-projects a:hover .external-link {
+        color: #2a4cff;
+      }
+      .cv-projects .project-desc {
+        font-size: 0.95rem;
+        color: #444;
+        margin: 2px 0 0 28px;
+        line-height: 1.3;
+      }
+      a {
+        color: #2a4cff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-container">
+      <header class="cv-header">
+        <div class="cv-header-info">
+          <h1>Diego Fernando Avila Gómez</h1>
+          <ul class="cv-header-list">
+            <li>
+              <span class="icon">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </span>
+              diego2601@gmail.com
+            </li>
+            <li>
+              <span class="icon">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.76 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"
+                  />
+                </svg>
+              </span>
+              +573137478782
+            </li>
+            <li>
+              <span class="icon">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  />
+                </svg>
+              </span>
+              Manizales, Colombia
+            </li>
+            <li>
+              <span class="icon">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"
+                  />
+                </svg>
+              </span>
+              1986
+            </li>
+            <li>
+              <span class="icon">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M3.9 12.5c0 1.7 1.4 3.1 3.1 3.1h3.8v-1.8H7c-1.1 0-1.9-.9-1.9-1.9s.8-1.9 1.9-1.9h3.8V8.7H7c-1.7 0-3.1 1.4-3.1 3.1zm4.6-1.1h6.9v1.8H8.5v-1.8zm2.8 6.3h3.8c1.7 0 3.1-1.4 3.1-3.1s-1.4-3.1-3.1-3.1h-3.8v1.8h3.8c1.1 0 1.9.9 1.9 1.9s-.8 1.9-1.9 1.9h-3.8v1.8z"
+                  />
+                </svg>
+              </span>
+              <a
+                href="https://avila2601.github.io/HDV/"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Web resume</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="cv-header-photo">
+          <img src="src/assets/hdv-kick.png" alt="Diego Avila Photo" />
+        </div>
+      </header>
+      <main class="cv-main">
+        <div class="cv-main-left">
+          <section class="cv-profile">
+            <h2>Profile</h2>
+            <p>
+              <strong>Industrial Engineer with 12+ years of experience</strong>
+              in process management, quality management, and team coordination,
+              <strong>with intensive training in Frontend development</strong>
+              using Angular. 1 year of hands-on experience building modern,
+              responsive, and scalable web applications through personal
+              projects deployed to production. My industrial background enables
+              me to communicate effectively with stakeholders and translate
+              complex business needs into effective technical implementations.
+            </p>
+          </section>
+          <section class="cv-education">
+            <h2>Education</h2>
+            <div class="cv-education-item">
+              <span>06/2011</span>
+              <strong>Industrial Engineer</strong>Universidad Nacional de
+              Colombia
+            </div>
+            <div class="cv-education-item">
+              <span>08/2023</span>
+              <strong>Specialist in Senior Management</strong>Fundación
+              Universitaria del Área Andina
+            </div>
+          </section>
+          <section class="cv-experience">
+            <h2>Experience</h2>
+            <div class="cv-experience-item">
+              <span>09/2023 – Present</span>
+              <strong>Career Change - Frontend Development</strong>
+              <p>
+                Intensive training period in Frontend development with Angular
+                focused on my professional transition from Industrial
+                Engineering. Creation of functional web applications with API
+                integration, responsive design, and automated deployment.<br />
+                <br /><strong>Main activities:</strong>
+                <span class="smaller-font">
+                  • Specialization in Angular and TypeScript (18 months of
+                  self-taught study, 3 completed projects)<br />
+                  • Development of functional, responsive, and scalable web
+                  applications with modular architecture<br />
+                  • Implementation of best practices: Clean Code, SOLID
+                  principles, and Atomic Design<br />
+                  • Integration with REST APIs for data consumption<br />
+                  • CI/CD pipeline setup with GitHub Actions for automated
+                  deployment<br />
+                  • Development with agile methodologies applying Git Flow for
+                  version control<br />
+                  • Performance optimization: Lazy Loading, OnPush Change
+                  Detection, and Bundle optimization<br />
+                  • Unit testing implementation with Jasmine and Karma<br />
+                  • Responsive Design with CSS Grid, Flexbox, and frameworks
+                  like Bootstrap and Tailwind<br />
+                  • Reactive state management with RxJS and Observables<br />
+                </span>
+              </p>
+            </div>
+            <div class="cv-experience-item">
+              <span>03/2021 – 06/2023</span>
+              <strong
+                >Procurement Professional<br />Universidad de Caldas</strong
+              >
+              <p>
+                Responsible for the comprehensive management of the procurement
+                process, including the preparation and review of technical
+                documents, selection and contracting of suppliers according to
+                program regulations, evaluation of offers, contract drafting,
+                and monitoring of purchases and support staff activities.
+              </p>
+            </div>
+            <div class="cv-experience-item">
+              <span>08/2016 – 07/2020</span>
+              <strong
+                >University Professional<br />Universidad Nacional de
+                Colombia</strong
+              >
+              <p>
+                Advisory activities in pre-contractual and contracting
+                processes, including supplier selection and negotiation.
+                Monitoring and management of indicators and continuous
+                improvement activities.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="cv-main-right">
+          <section class="cv-experience-right">
+            <div class="cv-experience-item">
+              <span>03/2014 – 07/2015</span>
+              <strong>Branch Manager<br />Seguridad Nacional Ltda</strong>
+              <p>
+                Design and implementation of strategies aimed at acquiring new
+                clients, as well as the attention and management of current
+                clients. Administrative tasks and personnel management processes
+                required for operation.
+              </p>
+            </div>
+            <div class="cv-experience-item">
+              <span>03/2012 – 02/2014</span>
+              <strong
+                >Management Systems Coordinator<br />Seguridad Nacional
+                Ltda</strong
+              >
+              <p>
+                Ensured the company's ISO 9001 and BASC recertification
+                processes, as well as activities aimed at continuous process
+                improvement. Handling of customer requests and complaints.
+                Implementation and monitoring of Strategic Planning and Balanced
+                Score Card.
+              </p>
+            </div>
+          </section>
+          <section class="cv-skills">
+            <h2>Skills</h2>
+            <div class="cv-skills-group">
+              <h3>Languages</h3>
+              <div class="cv-skill-bar">
+                <span>Spanish</span>
+                <div class="bar">
+                  <div class="fill" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>English</span>
+                <div class="bar">
+                  <div class="fill" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cv-skills-group">
+              <h3>Programming Skills</h3>
+              <div class="cv-skill-bar">
+                <span>Angular</span>
+                <div class="bar">
+                  <div class="fill" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>TypeScript</span>
+                <div class="bar">
+                  <div class="fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Atomic design</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>BEM</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>SOLID</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Testing</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Object-Oriented Programming (OOP)</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Responsive Design</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Git</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="cv-skill-bar">
+                <span>Angular Material, Bootstrap & Tailwind CSS</span>
+                <div class="bar">
+                  <div class="fill" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="cv-hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+              <li>
+                <span class="icon">💻</span> Frontend Development & New
+                Technologies
+              </li>
+              <li><span class="icon">🎾</span> Tennis</li>
+              <li><span class="icon">✈️</span> Travel</li>
+              <li><span class="icon">♠️</span> Poker</li>
+              <li><span class="icon">🎬</span> Cinema</li>
+            </ul>
+          </section>
+          <section class="cv-projects">
+            <h2>Featured Projects</h2>
+            <ul>
+              <li>
+                <a href="https://avila2601.github.io/SerTech/" target="_blank">
+                  <span class="icon">🔗</span> SerTech
+                  <span class="external-link" title="Open in new tab">
+                    <svg
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M14 3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V5.414l-7.293 7.293a1 1 0 0 1-1.414-1.414L11.586 4H10a1 1 0 1 1 0-2h4z"
+                      />
+                      <path
+                        d="M5 7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3a1 1 0 1 1 2 0v3a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h3a1 1 0 1 1 0 2H5z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+                <p class="project-desc">
+                  Web application for managing technical service requests for
+                  appliances. Facilitates efficient connection between clients
+                  and specialized technicians.
+                </p>
+              </li>
+              <li>
+                <a
+                  href="https://avila2601.github.io/planetaPredictor/"
+                  target="_blank"
+                >
+                  <span class="icon">🔗</span> Planeta Predictor
+                  <span class="external-link" title="Open in new tab">
+                    <svg
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M14 3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V5.414l-7.293 7.293a1 1 0 0 1-1.414-1.414L11.586 4H10a1 1 0 1 1 0-2h4z"
+                      />
+                      <path
+                        d="M5 7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3a1 1 0 1 1 2 0v3a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h3a1 1 0 1 1 0 2H5z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+                <p class="project-desc">
+                  Interactive tool to predict football match results. Allows
+                  users to create pools and view standings based on points
+                  earned.
+                </p>
+              </li>
+              <li>
+                <a
+                  href="https://avila2601.github.io/movieApp/movies"
+                  target="_blank"
+                >
+                  <span class="icon">🔗</span> Movie App
+                  <span class="external-link" title="Open in new tab">
+                    <svg
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M14 3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V5.414l-7.293 7.293a1 1 0 0 1-1.414-1.414L11.586 4H10a1 1 0 1 1 0-2h4z"
+                      />
+                      <path
+                        d="M5 7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3a1 1 0 1 1 2 0v3a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h3a1 1 0 1 1 0 2H5z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+                <p class="project-desc">
+                  Platform to explore and search for movies and series.<br />Provides
+                  details, ratings, and allows users to watch trailers.
+                </p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
