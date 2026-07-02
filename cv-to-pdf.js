@@ -207,7 +207,7 @@ const defaultStyles = `
   const isFullDocument = /<html[\s>]/i.test(htmlContent) || /<!doctype html>/i.test(htmlContent);
 
   if (!isFullDocument) {
-    const baseHref = url.pathToFileURL(path.dirname(inputPath) + path.sep).href;
+    const baseHref = url.pathToFileURL(process.cwd() + path.sep).href;
     htmlContent = `<!doctype html>
 <html lang="es">
   <head>
