@@ -207,12 +207,14 @@ const defaultStyles = `
   const isFullDocument = /<html[\s>]/i.test(htmlContent) || /<!doctype html>/i.test(htmlContent);
 
   if (!isFullDocument) {
+    const baseHref = url.pathToFileURL(path.dirname(inputPath) + path.sep).href;
     htmlContent = `<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CV Industrial - Diego Fernando Avila Gómez</title>
+    <base href="${baseHref}">
     <style>${defaultStyles}</style>
   </head>
   <body>${htmlContent}</body>

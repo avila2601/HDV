@@ -1,4 +1,21 @@
 <div class="cv-container">
+  <style>
+    @media print {
+      .cv-header-photo {
+        margin-top: 40px;
+      }
+      /* Forzar que el bloque de marzo 2021 comience en una nueva página */
+      #marzo2021 {
+        page-break-before: always;
+        break-before: page;
+      }
+      /* Forzar salto de página antes de Marzo 2014 para moverlo a la siguiente página */
+      #marzo2014 {
+        page-break-before: always;
+        break-before: page;
+      }
+    }
+  </style>
   <header class="cv-header">
     <div class="cv-header-info">
       <h1>Diego Fernando Avila Gómez</h1>
@@ -53,7 +70,10 @@
       </ul>
     </div>
     <div class="cv-header-photo">
-      <img src="/assets/hdv-kick.png" alt="Foto de Diego Avila" />
+      <img
+        src="file:///C:/Users/Asus/OneDrive/Desktop/Proyectos/HDV/src/assets/hdv-kick.png"
+        alt="Foto de Diego Avila"
+      />
     </div>
   </header>
 
@@ -136,8 +156,14 @@
               Implementación de componentes reutilizables, formularios y
               navegación modular.
             </li>
-            <li>Diseño de soluciones orientadas a la digitalización y optimización de procesos.</li>
-            <li>Control de versiones mediante Git y GitHub, aplicando buenas prácticas de desarrollo frontend.</li>
+            <li>
+              Diseño de soluciones orientadas a la digitalización y optimización
+              de procesos.
+            </li>
+            <li>
+              Control de versiones mediante Git y GitHub, aplicando buenas
+              prácticas de desarrollo frontend.
+            </li>
           </ul>
         </div>
         <div class="cv-experience-item">
@@ -160,23 +186,38 @@
               Seguimiento a la calidad de la ejecución y cumplimiento de
               especificaciones técnicas.
             </li>
-            <li>Gestión de riesgos y coordinación de actividades para el cumplimiento del cronograma.</li>
+            <li>
+              Gestión de riesgos y coordinación de actividades para el
+              cumplimiento del cronograma.
+            </li>
             <li>
               Apoyo en la toma de decisiones técnicas y administrativas para el
               desarrollo del proyecto.
             </li>
           </ul>
         </div>
-        <div class="cv-experience-item">
+        <div class="cv-experience-item" id="marzo2021">
           <span>Marzo 2021 – Junio 2023</span>
           <strong>Profesional de Adquisiciones</strong>
           <em>Universidad de Caldas - Colombia Científica</em>
           <ul class="experience-details">
-             <li>Planeación y seguimiento del Plan Anual de Adquisiciones</li>
-             <li>Elaboración y revisión de documentos de adquisición y procesos de selección conforme a lineamientos de MINCIENCIAS y Banco Mundial.</li>
-             <li>Coordinación de procesos de selección y evaluación de ofertas conforme a lineamientos de MINCIENCIAS y Banco Mundial</li>
-            <li> Gestión integral del proceso de contratación conforme a normativa vigente</li>
-            <li>Elaboración y revisión de documentos técnicos y pliegos de condiciones</li>
+            <li>Planeación y seguimiento del Plan Anual de Adquisiciones</li>
+            <li>
+              Elaboración y revisión de documentos de adquisición y procesos de
+              selección conforme a lineamientos de MINCIENCIAS y Banco Mundial.
+            </li>
+            <li>
+              Coordinación de procesos de selección y evaluación de ofertas
+              conforme a lineamientos de MINCIENCIAS y Banco Mundial
+            </li>
+            <li>
+              Gestión integral del proceso de contratación conforme a normativa
+              vigente
+            </li>
+            <li>
+              Elaboración y revisión de documentos técnicos y pliegos de
+              condiciones
+            </li>
             <li>Selección, evaluación y contratación de proveedores</li>
             <li>Seguimiento y control de ejecución contractual</li>
             <li>Supervisión de equipo de trabajo y gestión de indicadores</li>
@@ -192,10 +233,20 @@
           <strong>Profesional Universitario</strong>
           <em>Universidad Nacional de Colombia</em>
           <ul class="experience-details">
-            <li>Elaboración y revisión de órdenes contractuales, contratos e informes, garantizando el cumplimiento del Manual de Convenios y Contratos y la normatividad aplicable</li>
+            <li>
+              Elaboración y revisión de órdenes contractuales, contratos e
+              informes, garantizando el cumplimiento del Manual de Convenios y
+              Contratos y la normatividad aplicable
+            </li>
             <li>Asesoría en procesos precontractuales y contractuales</li>
-            <li>Seguimiento a procesos precontractuales, apoyo a interventores y liquidación de contratos</li>
-            <li>Elaboración de informes e indicadores para el seguimiento de la gestión contractual</li>
+            <li>
+              Seguimiento a procesos precontractuales, apoyo a interventores y
+              liquidación de contratos
+            </li>
+            <li>
+              Elaboración de informes e indicadores para el seguimiento de la
+              gestión contractual
+            </li>
             <li>Análisis de riesgos y control en procesos de contratación</li>
           </ul>
         </div>
@@ -226,15 +277,20 @@
             </li>
           </ul>
         </div>
-        <div class="cv-experience-item">
+        <div class="cv-experience-item" id="marzo2014">
           <span>Marzo 2014 – Julio 2015</span>
           <strong>Director de Agencia</strong>
           <em>Seguridad Nacional Ltda</em>
           <ul class="experience-details">
-            <li>Seguimiento al cumplimiento del plan estratégico y los objetivos de la agencia</li>
+            <li>
+              Seguimiento al cumplimiento del plan estratégico y los objetivos
+              de la agencia
+            </li>
             <li>Preparación de procesos licitatorios públicos y privados</li>
             <li>Desarrollo e implementación de estrategias comerciales</li>
-            <li>Gestión de cartera de clientes y prospección de nuevos negocios</li>
+            <li>
+              Gestión de cartera de clientes y prospección de nuevos negocios
+            </li>
             <li>Administración de recursos y gestión de personal</li>
             <li>Análisis financiero y control presupuestal</li>
           </ul>
@@ -247,10 +303,16 @@
           <ul class="experience-details">
             <li>Implementación y mantenimiento de sistemas ISO 9001 y BASC</li>
             <li>Gestión de procesos de recertificación</li>
-            <li>Gestión documental del Sistema Integrado de Gestión y control de la documentación de procesos</li>
+            <li>
+              Gestión documental del Sistema Integrado de Gestión y control de
+              la documentación de procesos
+            </li>
             <li>Implementación de Balanced Scorecard</li>
             <li>Atencion al cliente y ejecución de estrategias de retención</li>
-            <li>Auditorías internas y gestión de acciones correctivas, preventivas y de mejora continua</li>
+            <li>
+              Auditorías internas y gestión de acciones correctivas, preventivas
+              y de mejora continua
+            </li>
           </ul>
         </div>
       </section>
