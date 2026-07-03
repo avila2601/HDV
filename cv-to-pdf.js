@@ -207,14 +207,22 @@ const defaultStyles = `
   const isFullDocument = /<html[\s>]/i.test(htmlContent) || /<!doctype html>/i.test(htmlContent);
 
   if (!isFullDocument) {
-    const baseHref = url.pathToFileURL(process.cwd() + path.sep).href;
+    const assetRoot = path.resolve(process.cwd(), 'src', 'assets');
+    htmlContent = htmlContent.replace(/(["'])(\/assets\/[^"']+)\1/g, (match, quote, assetPath) => {
+      const assetFile = assetPath.replace(/^\/assets\//, '');
+      const filePath = path.join(assetRoot, assetFile);
+      const buffer = fs.readFileSync(filePath);
+      const ext = path.extname(filePath).substring(1).toLowerCase();
+      const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'png' ? 'image/png' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'gif' ? 'image/gif' : 'application/octet-stream';
+      const base64 = buffer.toString('base64');
+      return `${quote}data:${mime};base64,${base64}${quote}`;
+    });
     htmlContent = `<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CV Industrial - Diego Fernando Avila Gómez</title>
-    <base href="${baseHref}">
     <style>${defaultStyles}</style>
   </head>
   <body>${htmlContent}</body>
