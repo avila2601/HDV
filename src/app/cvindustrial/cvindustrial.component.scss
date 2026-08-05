@@ -185,6 +185,30 @@
   margin-bottom: 8px;
 }
 
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  color: #1a1a2e;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  border-color: #1a1a2e;
+  background: #f0f0f0;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
 .experience-details {
   margin: 8px 0;
   padding-left: 0;

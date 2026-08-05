@@ -76,6 +76,19 @@
   vertical-align: middle;
 }
 
+.cv-header-list a {
+  color: #7ec8ff;
+  text-decoration: underline;
+  text-decoration-color: #7ec8ff;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.cv-header-list a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
 .cv-main {
   display: flex;
   flex-direction: row;
@@ -131,6 +144,7 @@
   font-size: 0.98rem;
 }
 
+
 .cv-skills-group h3 {
   font-size: 1rem;
   margin: 12px 0 6px 0;
@@ -139,6 +153,34 @@
 
 .cv-skills-group {
   margin-bottom: 18px;
+}
+
+/* Skills: inline tags with a small bullet before each item */
+.cv-skills .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 6px 0 12px 0;
+  padding: 0;
+  align-items: flex-start;
+}
+.cv-skills .skill-tags span {
+  display: inline-block;
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.cv-skills .skill-tags span::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 0.9em;
+  line-height: 1;
 }
 
 .cv-skill-bar {
